@@ -1,6 +1,6 @@
 // PATH=%PATH%;C:\CIA.data\Workspace\temp\apkInstaller\out\artifacts\apkInstaller_jar
 // cd C:\CIA.data\Workspace\temp\apkInstaller\test\apk
-
+package ken.apkinstaller
 import java.io.File
 
 

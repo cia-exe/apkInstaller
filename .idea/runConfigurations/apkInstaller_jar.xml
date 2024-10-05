@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="apkInstaller.jar" type="JarApplication">
+    <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/apkInstaller_jar/apkInstaller.jar" />
+    <option name="WORKING_DIRECTORY" value=".\testData\apk1" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <envs>
+      <env name="Path" value="C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Users\cia.exe\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\cia.exe\AppData\Local\Programs\Python\Python311\;C:\Users\cia.exe\AppData\Local\Programs\Python\Launcher\;C:\Users\cia.exe\AppData\Local\Microsoft\WindowsApps;C:\Users\cia.exe\.jdks\openjdk-19.0.1\bin;C:\SDK\Android\platform-tools;C:\Users\cia.exe\.dotnet\tools;C:\CIA.data\Workspace\apkInstaller\out\artifacts\apkInstaller_jar\" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
