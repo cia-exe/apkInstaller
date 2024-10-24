@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="MainKtTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+  <configuration default="false" name="MainKtTest.mainRemoveInstall" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
     <module name="apkInstaller" />
     <option name="PACKAGE_NAME" value="" />
     <option name="MAIN_CLASS_NAME" value="MainKtTest" />
-    <option name="METHOD_NAME" value="" />
-    <option name="TEST_OBJECT" value="class" />
+    <option name="METHOD_NAME" value="mainRemoveInstall" />
+    <option name="TEST_OBJECT" value="method" />
     <option name="WORKING_DIRECTORY" value="./testData/apk1" />
     <envs>
       <env name="Path" value="C:\CIA.data\Workspace\apkInstaller\out\artifacts\apkInstaller_jar;C:\SDK\Android\platform-tools\" />

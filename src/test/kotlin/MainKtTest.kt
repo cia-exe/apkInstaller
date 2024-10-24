@@ -11,6 +11,11 @@ internal class MainKtTest {
     @BeforeEach
     fun setUp() {
         println("--- setUp(${Thread.currentThread().id})")
+        // doesn't work because they are different processes.
+        //runCommand("cmd", "/c", "cd", "/testData/apk1")
+        runCommand("cmd", "/c", "path")
+        //runCommand("cmd", "/c", "path=c:/aaa")
+        //runCommand("cmd", "/c", "path")
     }
 
     @AfterEach
@@ -20,29 +25,61 @@ internal class MainKtTest {
 
     //@Disabled
     @Test
-    fun testMain() {
+    fun mainEmpty() {
         println("*** main(${Thread.currentThread().id})")
         main(emptyArray())
     }
 
-    //@Test
+    @Test
+    fun mainVerify() {
+        val arg = "-v"
+        println("*** main(${Thread.currentThread().id}) $arg")
+        main(arrayOf(arg))
+    }
+
+    @Test
+    fun mainInstall() {
+        val arg = "-i"
+        println("*** main(${Thread.currentThread().id}) $arg")
+        main(arrayOf(arg))
+    }
+
+    @Test
+    fun mainRemove() {
+        val arg = "-r"
+        println("*** main(${Thread.currentThread().id}) $arg")
+        main(arrayOf(arg))
+    }
+
+    @Test
+    fun mainRemoveInstall() {
+        val arg = "-ri"
+        println("*** main(${Thread.currentThread().id}) $arg")
+        main(arrayOf(arg))
+    }
+
+
+    // ---------------------------------------------------------------
+    @Test
     fun testPrintHelp() {
         println("*** printHelp(${Thread.currentThread().id})")
         printHelp()
     }
 
-    //@Test
+    @Test
     fun testRunCommand() {
         println("*** runCommand(${Thread.currentThread().id})")
     }
 
-    //@Test
+    @Test
     fun testGetPackageNameFromApk() {
         println("*** getPackageNameFromApk(${Thread.currentThread().id})")
+
     }
 
-    //@Test
+    @Test
     fun testAdb() {
         println("*** adb(${Thread.currentThread().id})")
+        adb("shell", "ls", "-la")
     }
 }
