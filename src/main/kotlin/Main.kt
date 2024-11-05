@@ -1,6 +1,8 @@
 // PATH=%PATH%;C:\CIA.data\Workspace\temp\apkInstaller\out\artifacts\apkInstaller_jar
 // cd C:\CIA.data\Workspace\temp\apkInstaller\test\apk
-package ken.apkinstaller
+
+// package ken.apkinstaller
+
 import java.io.File
 
 
@@ -135,11 +137,31 @@ fun main(args: Array<String>) {
     }
 }
 
+
 fun printHelp() {
+
+    val src = ::printHelp.javaClass.protectionDomain.codeSource.location.path
+    //val src = object {}.javaClass.protectionDomain.codeSource.location.path
+    //val path = object { val path = javaClass.protectionDomain.codeSource.location.path }.path
+
+    // val path = Unit.javaClass.protectionDomain.codeSource.location.path
+    //C:/Users/cia.exe/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.7.10/kotlin-stdlib-1.7.10.jar
+
+    // val c = MethodHandles.lookup().lookupClass()
+    // println("$c ${c.name} ${c.simpleName} ${c.protectionDomain.codeSource.location}")
+    // e.g. PATH=%PATH%;C:\CIA.data\Workspace\temp\apkInstaller\out\artifacts\apkInstaller_jar
+
+    val path = "Add the path in CMD by: PATH=%PATH%;${File(src).run { if (isFile) parentFile else this }.absolutePath}"
+    val line = "-".repeat(path.length)
+
     println(
         """
+        $line
+        $path
+        $line
+
         Usage:
-        
+
         java -jar apkInstaller.jar [-v | -i | -r | -ri]
         
         -v    : verify the installation of APK and Extensions.
@@ -227,7 +249,7 @@ fun runCommand(vararg commands: String, showOutput: Boolean = true): CommandResu
     } catch (e: Exception) {
         println("!!! runCommand Exception: ${e.message}")
         CommandResult(-999, e.message.orEmpty())
-    }.also { println("@@ runCommand[ ${commandList.joinToString(" ")} ]-> $it\n") }
+    }.also { println("@@ runCommand[ ${commandList.joinToString(" ")} ]-> $it") }
 }
 
 fun File.getPackageNameFromApk(): String? {

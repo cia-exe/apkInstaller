@@ -4,18 +4,17 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Assertions.*
 
-import ken.apkinstaller.*
-
 internal class MainKtTest {
 
     @BeforeEach
     fun setUp() {
-        println("--- setUp(${Thread.currentThread().id})")
+        println("+++ setUp(${Thread.currentThread().id})")
         // doesn't work because they are different processes.
         //runCommand("cmd", "/c", "cd", "/testData/apk1")
         runCommand("cmd", "/c", "path")
         //runCommand("cmd", "/c", "path=c:/aaa")
         //runCommand("cmd", "/c", "path")
+        println("--- setUp")
     }
 
     @AfterEach
